@@ -1,8 +1,12 @@
+package model;
+
+import model.LPSquad;
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
-public class LPSquadList extends UnicastRemoteObject implements LPSquadListInterface{
+public class LPSquadList extends UnicastRemoteObject implements LPSquadListInterface {
 
 	private ArrayList<LPSquad> houses;
 	

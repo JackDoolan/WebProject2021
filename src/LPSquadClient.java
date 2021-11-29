@@ -1,3 +1,7 @@
+import model.LPSquad;
+import model.LPSquadInterface;
+import model.LPSquadListInterface;
+
 import java.rmi.Naming;
 import java.util.ArrayList;
 
@@ -10,7 +14,7 @@ public class LPSquadClient {
 		
 		try {
 			
-			LPSquadListInterface LPSquadList = (LPSquadListInterface) Naming.lookup("listOfHouses");
+			LPSquadListInterface LPSquadList = (LPSquadListInterface) Naming.lookup("listOfPlayers");
 			
 			ArrayList<LPSquad> actualLPSquadList = LPSquadList.getList();
 			

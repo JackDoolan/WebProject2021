@@ -1,3 +1,5 @@
+package model;
+
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
 public class LPSquad extends UnicastRemoteObject implements LPSquadInterface {

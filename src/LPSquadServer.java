@@ -8,14 +8,14 @@ public class LPSquadServer {
 		System.out.println("Server has started.....");
 		
 		try {
-			LPSquad bungalow = new LPSquad("Smiths", "Dublin");
-			System.out.println("bungalow created....");
-			LPSquad dormer = new LPSquad("Burkes", "Kerry");
-			System.out.println("dormer created...");
+			LPSquad salah = new LPSquad("Salah", "Egyptian", 11, 108);
+			System.out.println("Salah created");
+			LPSquad mane = new LPSquad("Mane", "Senegalese",10,102);
+			System.out.println("Mane created");
 	
 			LPSquadList hl = new LPSquadList();
-			hl.addToList(bungalow);
-			hl.addToList(dormer);
+			hl.addToList(salah);
+			hl.addToList(mane);
 			
 			
 			Naming.rebind("listOfHouses", hl);

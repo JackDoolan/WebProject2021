@@ -15,7 +15,7 @@ public class LPSquadClient {
 			ArrayList<LPSquad> actualLPSquadList = LPSquadList.getList();
 			
 			for(LPSquadInterface h : actualLPSquadList) {
-				System.out.println(h.getOwners());
+				System.out.println(h.getPlayer());
 			}
 
 			

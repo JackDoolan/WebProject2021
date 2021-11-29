@@ -1,20 +1,60 @@
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
-public class LPSquad extends UnicastRemoteObject implements LPSquadInterface{
+public class LPSquad extends UnicastRemoteObject implements LPSquadInterface {
 
-	private String owners;
-	private String address;
-	
-	public LPSquad(String o, String a) throws RemoteException{
-		this.owners=o;
-		this.address=a;
+	private String player;
+	private String nationality;
+	private int kitNumber;
+	private int goalsScored;
+
+	public LPSquad(String player, String nationality, int kitNumber, int goalsScored) throws RemoteException{
+		this.player = player;
+		this.nationality=nationality;
+		this.kitNumber=kitNumber;
+		this.goalsScored=goalsScored;
 	}
-	
-	public String getOwners() {
-		return this.owners;
+	public String getPlayer() {
+		return player;
 	}
-	
-	public String getAddress() {
-		return this.address;
+
+	public void setPlayer(String player) {
+		this.player = player;
 	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public int getKitNumber() {
+		return kitNumber;
+	}
+
+	public void setKitNumber(int kitNumber) {
+		this.kitNumber = kitNumber;
+	}
+
+	public int getGoalsScored() {
+		return goalsScored;
+	}
+
+	public void setGoalsScored(int goalsScored) {
+		this.goalsScored = goalsScored;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

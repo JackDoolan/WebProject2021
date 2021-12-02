@@ -8,6 +8,9 @@ import java.util.ArrayList;
 
 public interface LPSquadListInterface extends Remote{
 
-	public void addToList(LPSquad h) throws RemoteException;
-	public ArrayList<LPSquad> getList() throws RemoteException;
+	public void addToList(LPSquadInterface h) throws RemoteException;
+	public ArrayList<LPSquadInterface> getList() throws RemoteException;
+	public void addPlayer(String name, String nationality, int kitNumber, int goalsScored) throws RemoteException;
+	public void editPlayer(String name, String nationality, int kitNumber, int goalsScored) throws RemoteException;
+	public void deletePlayer(String name) throws RemoteException;
 }

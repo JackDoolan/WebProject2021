@@ -1,3 +1,5 @@
+package controller;
+
 import model.LPSquad;
 import model.LPSquadList;
 import model.LPSquadListInterface;
@@ -7,14 +9,20 @@ import java.rmi.Naming;
 
 public class LPSquadServer {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		// TODO Auto-generated method stub
-
-
+		LPSquad salah = new LPSquad("Salah", "Egyptian", 11, 108);
+		LPSquad mane = new LPSquad("Mane", "Senegalese",10,102);
+		LPSquad firmino = new LPSquad("Firmino", "Brazillian",13,102);
 		System.out.println("Server has started.....");
 		LPSquadList hl = new LPSquadList();
+		hl.addToList(salah);
+		hl.addToList(mane);
+		hl.addToList(firmino);
+
 		try {
 
+			Naming.rebind("listOfPlayers",hl);
 			FileInputStream fileIn = new FileInputStream("Players.ser");
 			ObjectInputStream objectIn = new ObjectInputStream(fileIn);
 			LPSquadListInterface newPlayer = (LPSquadListInterface) objectIn.readObject();
@@ -22,20 +30,15 @@ public class LPSquadServer {
 
 			Naming.rebind("listOfPlayers", newPlayer);
 
+
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 
-			System.out.println("Creating new Player List");
-			LPSquad salah = new LPSquad("Salah", "Egyptian", 11, 108);
-			System.out.println("Salah Created");
-			LPSquad mane = new LPSquad("Mane", "Senegalese",10,102);
-			System.out.println("Mane Created");
+
 
 			//Serializing
-			hl.addToList(salah);
-			hl.addToList(mane);
 			FileOutputStream fileOut = new FileOutputStream("Players.ser");
 			ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
 			objectOut.writeObject(hl);
@@ -45,12 +48,11 @@ public class LPSquadServer {
 
 
 
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 
 }
-
 
 
 

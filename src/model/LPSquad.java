@@ -1,8 +1,8 @@
 package model;
-
+import java.io.Serializable;
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
-public class LPSquad extends UnicastRemoteObject implements LPSquadInterface {
+public class LPSquad extends UnicastRemoteObject implements LPSquadInterface, Serializable {
 
 	private String player;
 	private String nationality;
